@@ -1,0 +1,33 @@
+docker pull jupyter/all-spark-notebook:x86_64-spark-3.5.0
+
+docker run -it --rm -p 8888:8888 -p 4040:4040 -p 4041:4041 \
+  -e JUPYTER_ALLOW_INSECURE_WRITES=1 \
+  -e JUPYTER_ENABLE_LAB=yes \
+  -v ./data:/home/jovyan/data \
+  jupyter/all-spark-notebook:x86_64-spark-3.5.0 \
+  start-notebook.sh --NotebookApp.allow_origin='*'
+
+After this, you get a URL in console like: http://127.0.0.1:8888/lab?token=0b5887d3319f278c675a3de02cfa4489762539d5de201c06
+Copy the URL and enter in VSCode until http://127.0.0.1:8888/lab
+When asked for password enter the rest: 0b5887d3319f278c675a3de02cfa4489762539d5de201c06
+
+
+Artifacts Doc: METADATA SHEET + DRAW.IO +  POWER BI
+
+
+Look forward to your feedback.
+----------------------------------------------------------------------
+Changes to the dataset:
+~~~~~~~~~~~~~~~~~~~~~~
+
+1. Remove spaces from column names
+
+----------------------------------------------------------------------
+
+Data Quality checks:
+~~~~~~~~~~~~~~~~~~~~
+
+1. Use REGEX to check quality of phone numbers
+
+
+
